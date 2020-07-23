@@ -1,0 +1,21 @@
+Page({
+  data:{
+    picker:{
+      arr:['1','2','3','4','5','6'],
+      index:1
+    }
+  },
+  pickerChange:function(e){
+    this.setData({
+      'picker.index':e.datail.value
+    })
+  },
+  formSubmit:function(e){
+    console.log(e.detail.formId)
+    wx.showToast({
+      title: '提交成功',
+      icon:'success',
+      duration:1500
+    })
+  }
+})

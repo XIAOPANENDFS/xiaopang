@@ -1,0 +1,33 @@
+<view class="player player-{{isPlayingMusic? 'play':'pause'}}" bindtap = "play">
+  <!-- 背景音樂 -->
+  <image src="../images/music_icon.png"></image>
+  <image src="../images/music_play.png"></image>
+</view>
+<image class="bg" src="../images/bg_1.png"></image>
+<view class="content">
+  <image class="content-gif" src="../images/save_the_date.gif"></image>
+  <view class="content-title">邀請函</view>
+  <view class="content-avatar">
+    <image src="../images/avatar.png"></image>
+  </view>
+  <view class="content-info">
+    <view class="content-name" bindtap="callGroom">
+      <image src="../images/tel.png"></image>
+      <view>番薯</view>
+      <view>新郎</view>
+    </view> 
+    <view class="content-wadding">
+      <image src="../images/wedding.png"></image>
+    </view>
+      <view class="content-name" bindtap="callBrigge">
+        <image src="../images/tel.png"></image>
+        <view>番薯</view>
+        <view>新娘</view>
+    </view>
+  </view>
+  <view class="content-address">
+    <view>我們誠邀您參加我們的婚禮</view>
+    <view>時間：2020年10月1日</view>
+    <view>地點：廣東省廣州市xx酒店</view>
+  </view>
+</view>

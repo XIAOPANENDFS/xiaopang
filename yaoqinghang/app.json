@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/picture/picture",
+    "pages/video/video",
+    "pages/map/map",
+    "pages/guest/guest"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ff4c91",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小程序",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#cc",
+    "selectedColor": "#ff4c91",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "邀請函",
+        "iconPath": "pages/images/invite.png",
+        "selectedIconPath": "pages/images/invite.png"
+      },
+      {
+        "pagePath": "pages/picture/picture",
+        "text": "照片",
+        "iconPath": "pages/images/marry.png",
+        "selectedIconPath": "pages/images/marry.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "美好時光",
+        "iconPath": "pages/images/video.png",
+        "selectedIconPath": "pages/images/video.png"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "婚禮地點",
+        "iconPath": "pages/images/map.png",
+        "selectedIconPath": "pages/images/map.png"
+      },
+      {
+        "pagePath": "pages/guest/guest",
+        "text": "賓客信息",
+        "iconPath": "pages/images/guest.png",
+        "selectedIconPath": "pages/images/guest.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "sitemapLocation": "sitemap30.json"
+}

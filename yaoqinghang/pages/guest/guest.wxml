@@ -1,0 +1,16 @@
+<image class="bg" src="../images/bj_2.png"></image>
+<form bindsubmit="fromSubmit">
+  <view class="content">
+  <view>  <input name="name" placeholder-class="phcolor" placeholder="请输入您的姓名"></input></view>
+  <view>
+    <input name="phone" placeholder-class="phcolor" placeholder="请输入您的手机号"></input>
+  </view>
+  <view>
+    <picker name="num" bindchange="pickerChang" value="{{picker.index}}" range="{{picker.arr}}">参加婚礼人数：{{oicker.arr[picker.index]}}</picker>
+  </view>
+  <view>
+    <input name="wish" placeholder="前输入祝福语" placeholder-class="phcolor"></input>
+  </view>
+  <button form-type="submit" report-submit>提交</button>
+  </view>
+</form>

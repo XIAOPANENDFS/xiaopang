@@ -1,0 +1,14 @@
+<video id="myVideo" src="{{sec}}" danmu-list="{{danmuList}}" enable-danmu danmu-but controls>
+    <input bindblur="bindInputBlur"></input>
+    <button bindtap = "bindSendDanmu">發送彈幕</button>
+    <button bindtap = 'bindButtonTap'>獲取視頻</button>
+    <view class="video-list" wx:for='{{movielist}}' wx:key='user'>
+        <view class="video-tutle">
+            標題：{{item.title}}
+        </view>
+        <view class="video-time">
+            時間：{{item.creata_TIME}}
+        </view>
+        <VIdeo src="{{item.src}}" objecFit="fill"></VIdeo>
+    </view>
+</video>
