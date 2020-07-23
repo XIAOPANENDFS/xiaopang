@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+.test {
+	width: 100%;
+	height: 100%;
+	background-color: violet;
+	padding: 0 50px 0 60px;
+}
+</style>
+</head>
+
+<body>
+
+	<!-- 1. onsubmit = return fasle 来取消默认的表单提交行为 -->
+	<form onsubmit="return false;">
+		帐号:<input type="text" name="user"> <br> 密码:<input
+			type="password" name="pwd"> <input id="submit1" type="submit"
+			value="登录"> <input type="reset" value="重置">
+	</form>
+	<br>
+	<!-- 添加店铺信息信息 -->
+	<fieldset style="width: 300px;">
+		<form onsubmit="return false;" id="form2">
+			店铺名称:<input type="text" name="name"> <br> 优惠设置:<input
+				type="text" name="youhui"> <br> <input type="submit"
+				id="submit2" value="提交">
+		</form>
+	</fieldset>
+	<!-- 添加商品信息信息 -->
+	<fieldset style="width: 300px;">
+		<form action="login2">
+			店铺名称:<input type="text" name="name"> <br> 优惠设置:<input
+				type="text" name="youhui"> <br> <input type="submit"
+				value="提交">
+		</form>
+	</fieldset>
+
+	<fieldset style="width: 300px;">
+		<form action="TestServlet">
+			帐号:<input type="text" name="user"> <br> 密码:<input
+				type="password" name="pwd"> <input id="submit1"
+				type="submit" value="登录"> <input type="reset" value="重置">
+		</form>
+	</fieldset>
+
+	<!-- 异步  同步 -->
+	<script src="js/jquery.js"></script>
+	<script>
+		//表单是否有反馈
+		$("#submit1").click(function() {
+			//form 表单数据
+			$.ajax({
+				//请求地址
+				url : "http://192.168.3.42:8080/JD/login2",
+				//请求传输的参数
+				data : $("form").eq(0).serialize(),
+				//请求类型 get  post
+				type : "post",
+				//请求成功的回调  这个方法有一个参数，这个就是默认接收值
+				success : function(data) {
+					console.log(data);
+				}
+			});
+		});
+		$("#submit2").click(function() {
+			$.ajax({
+				url : "http://192.168.0.110:8080/JD/DianPu",
+
+				data : $("#form2").serialize() + "&method=insert",
+				type : "post",
+				success : function(data) {
+					console.log(data);
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>

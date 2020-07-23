@@ -1,0 +1,285 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+main {
+    background-color: #f5f5f5;
+}
+
+/* 京东布局设计 */
+
+.jd_layout {
+    min-width: 300px;
+    /* max-width: 640px; */
+    /* 为了让其居中 */
+    margin: 0 auto;
+}
+
+.header {
+    height: 50px;
+    background-image: url(../img/header-bg.png);
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.header .icon-left {
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    /* background-color: red; */
+    left: 10px;
+    top: 10px;
+    background-image: url(../img/sprites.png);
+    background-position: -26px 0;
+    background-size: 250px 250px;
+}
+
+.header .text-center {
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+}
+
+.header .icon-right {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 10px;
+    background-image: url(../img/sprites.png);
+    background-position: -72px 0;
+    background-size: 250px 250px;
+}
+
+/* 安全提示模块 */
+
+.tips {
+    text-align: center;
+    font-size: 16px;
+    color: #797979;
+    height: 35px;
+    line-height: 35px;
+    background-color: white;
+}
+
+.tips img {
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+}
+
+/* 店铺的独立模块  */
+
+.dian-box {
+    margin-top: 20px;
+}
+
+.q-btn {
+    background-color: white;
+    height: 35px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.q-btn .l-checkbox {
+    width: 20px;
+    height: 20px;
+    line-height: 35px;
+    float: left;
+    margin: 7px;
+    background-image: url(../img/shop-icon.png);
+    background-size: 50px 100px;
+}
+
+.l-active {
+    background-position: -24px 0 !important;
+}
+
+.q-btn .buy-logo {
+    width: 20px;
+    height: 20px;
+    line-height: 35px;
+    float: left;
+    margin-top: 7px;
+    background-image: url(../img/buy-logo.png);
+    background-size: cover;
+}
+
+.q-btn .l-text1 {
+    line-height: 35px;
+    float: left;
+    font-size: 14px;
+}
+
+.q-btn .right {
+    float: right;
+    color: #f15858;
+    line-height: 35px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.q-box {
+    height: 100px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.q-box .l-checkbox {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 7px;
+    background-image: url(../img/shop-icon.png);
+    background-size: 50px 100px;
+}
+
+.q-box .img {
+    height: 70px;
+    width: 70px;
+    float: left;
+    margin-top: 15px;
+    background-image: url(../img/detail01.jpg);
+    background-size: cover;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.q-box>.right {
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+    top: 15px;
+    margin-right: 10px;
+}
+
+.q-box .menu {
+    display: block;
+    line-height: 15px;
+}
+
+.q-box .menu, .q-box .money {
+    font-size: 12px;
+}
+
+.add-menu>.left {
+    position: absolute;
+    bottom: 0;
+}
+
+.add-menu>.left>* {
+    box-sizing: border-box;
+    height: 20px;
+    float: left;
+    width: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.add-menu .icon-l {
+    background-image: url(../img/shop-icon.png);
+    background-position: 2px 52px;
+    background-size: 50px 100px;
+}
+
+.add-menu .icon-r {
+    background-image: url(../img/shop-icon.png);
+    background-position: 28px 52px;
+    background-size: 50px 100px;
+}
+
+.add-menu .right {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    bottom: 0;
+    right: 0;
+}
+
+.add-menu .head {
+    height: 6px;
+    width: 20px;
+    background-image: url(../img/delete_up.png);
+    background-size: 20px 6px;
+}
+
+.add-menu .body {
+    height: 19px;
+    width: 20px;
+    background-image: url(../img/delete_down.png);
+    background-size: 20px 19px;
+    background-position: 0 -2px;
+}
+
+footer {
+    height: 60px;
+    background-color: #313131;
+    width: 100%;
+    /* 固定脱离  流布局    */
+    position: fixed;
+    bottom: 0;
+    color: white;
+}
+
+footer .left {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+footer .right {
+    width: 30%;
+    height: 100%;
+    background-color: #f15353;
+    float: left;
+    /* 文字水平居中第一法则 */
+    text-align: center;
+    /* 文字垂直居中第二法则，保证文字只有一段，行高和元素高度一致 */
+    line-height: 60px;
+}
+
+footer .l-checkbox {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 7px;
+    background-image: url(../img/shop-icon.png);
+    background-size: 50px 100px;
+}
+
+footer .select-text {
+    float: left;
+    line-height: 60px;
+    font-size: 12px;
+    margin: 0 3px;
+}
+
+footer .money-box {
+    font-size: 12px;
+    /* 每一段文字的间隔 */
+    margin-top: 10px;
+    line-height: 21px;
+    float: left;
+}
+
+footer .heji {
+    font-size: 18px;
+}
+
+.l-checkbox-q {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    line-height: 35px;
+    float: left;
+    margin: 7px;
+    top: 10px;
+    background-image: url(../img/shop-icon.png);
+    background-size: 50px 100px;
+}

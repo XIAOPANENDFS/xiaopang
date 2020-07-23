@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header class="jd_layout">
+        <!-- 头部菜单 -->
+        <div class="header-cai" style="z-index: 999999;">
+
+            <div class="header-wrap" id="header_cai">
+                <div class="h-left">
+
+                </div>
+                <div class="h-center">
+
+                    <form class="h-seach">
+                        <div class="img"></div>
+                        <input type="text">
+                    </form>
+                </div>
+                <div class="h-right">
+                    <a href="test.html"> 登录</a>
+                </div>
+            </div>
+
+        </div>
+
+        <img id="img1" src="img/l1.jpg" style="width: 100%; display: block;" alt="">
+    </header>
+
+
+    <main class="jd_layout">
+        <!-- 菜单模块 -->
+        <div class="nav-type">
+            <div class="items-box">
+                <a href="shong.html">
+                    <img src="img/nav0.png" alt="">
+                    <p style="color: black;">分类查询</p>
+                </a>
+            </div>
+            <div class="items-box">
+                <img src="img/nav1.png" alt="">
+                <p>分类查询</p>
+            </div>
+            <div class="items-box">
+                <img src="img/nav2.png" alt="">
+                <p>分类查询</p>
+            </div>
+            <div class="items-box">
+                <img src="img/nav3.png" alt="">
+                <p>分类查询</p>
+            </div>
+
+
+            <div class="items-box">
+                <img src="img/nav4.png" alt="">
+                <p>分类查询</p>
+            </div>
+            <div class="items-box">
+                <img src="img/nav5.png" alt="">
+                <p>分类查询</p>
+            </div>
+            <div class="items-box">
+                <img src="img/nav6.png" alt="">
+                <p>分类查询</p>
+            </div>
+            <div class="items-box">
+                <img src="img/nav7.png" alt="">
+                <p>分类查询</p>
+            </div>
+
+        </div>
+
+
+        <!-- 掌上秒杀 -->
+        <div class="zhang">
+            <div class="zhang-2">
+                <div class="title">
+                    <div class="left">
+                        <img src="img/seckill-icon.png" alt="">
+                        <span class="tilte-text">掌上秒杀</span>
+                        <div class="time">
+                            <span class="shuzi">0</span>
+                            <span class="shuzi">0</span>
+                            <span>:</span>
+                            <span class="shuzi">0</span>
+                            <span class="shuzi">0</span>
+                            <span>:</span>
+                            <span class="shuzi">0</span>
+                            <span class="shuzi">0</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        更多&gt;
+                    </div>
+                </div>
+                <!-- 商品部分 -->
+                <div class="zhang-s">
+
+                    <div class="s-content">
+                        <img src="img/seckill_1.jpg" alt="">
+                        <span>￥12.12</span>
+                        <del>￥26.60</del>
+                    </div>
+
+                    <div class="s-content">
+                        <img src="img/seckill_1.jpg" alt="">
+                        <span>￥12.12</span>
+                        <del>￥26.60</del>
+                    </div>
+
+                    <div class="s-content">
+                        <img src="img/seckill_1.jpg" alt="">
+                        <span>￥12.12</span>
+                        <del>￥26.60</del>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 疯狂星期二 -->
+        <div class="xing2">
+            <div class="xing2-box">
+                <div class="title-x">
+                    <div class="img"></div>
+                    <span>
+                        疯狂星期二
+                    </span>
+                </div>
+            </div>
+            <div class="xing3-box">
+                <img src="img/banner_1.png" alt="">
+            </div>
+        </div>
+
+        <!-- 超值购 -->
+
+        <div class="chaoshi">
+            <div class="chaoshi-1">
+                <div class="title-x">
+                    <div class="img"></div>
+                    <span>
+                        疯狂星期二
+                    </span>
+                </div>
+            </div>
+
+            <div class="chaoshi-2">
+
+                <div class="left">
+                    <img src="img/cp1.jpg" alt="">
+                </div>
+
+                <div class="right">
+                    <div style=" border-bottom: 1px solid #dcdcdc;">
+                        <img src="img/cp2.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="img/cp3.jpg" alt="">
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </main>
+    <footer>
+    </footer>
+
+    <script>
+
+        var img1 = document.getElementById("img1");
+        var header_cai = document.getElementById("header_cai");
+        //1.得到滚动条滑动事件
+        document.onscroll = function () {
+            //获取轮播图的高度
+            var imgclientHeight = img1.clientHeight
+            //滚动的距离上方的位置高度
+            var scrollTop = document.documentElement.scrollTop;
+
+            // if (scrollTop>= imgclientHeight){
+            //     header_cai.style.backgroundColor = "rgba(255,0,0,)";
+            // }else{
+            //     header_cai.style.backgroundColor = "transparent";
+            // }
+
+            header_cai.style.backgroundColor = "rgba(255,0,0," + scrollTop / imgclientHeight + ")";
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>JD</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<!-- <filter> <filter-name>LogFilter</filter-name> <filter-class>com.jd.tools.LogFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>LogFilter</filter-name> 拦截的请求方法 <url-pattern>/ShoppingCart</url-pattern> 
+		</filter-mapping> <filter> <filter-name>IndexFilter</filter-name> <filter-class>com.jd.tools.IndexFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>IndexFilter</filter-name> <url-pattern>/index.html</url-pattern> 
+		</filter-mapping> -->
+
+<!--  1.配置这个过滤器  -->
+	<!-- <filter>
+		<filter-name>Lanjie</filter-name>
+		<filter-class>com.jd.tools.LanJieFilter</filter-class>
+	</filter>
+	 2. 配置映射
+	<filter-mapping>
+	    <filter-name>Lanjie</filter-name>
+	    <url-pattern>/index.html</url-pattern>
+	</filter-mapping>
+ -->
+
+</web-app>

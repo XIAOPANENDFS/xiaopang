@@ -1,0 +1,284 @@
+/* 京东布局设计 */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.jd_layout {
+    min-width: 300px;
+    max-width: 640px;
+    /* 为了让其居中 */
+    margin: 0 auto;
+    background-color: #f5f5f5;
+}
+
+.header-wrap {
+    min-width: 300px;
+    max-width: 640px;
+    height: 50px;
+    /* 为了让其居中 */
+    position: relative;
+    left: 0;
+    /* background-color: red; */
+}
+
+.header-cai {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+}
+
+.header-cai .h-left {
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    /* 记得取消背景颜色 */
+    /* background-color: black; */
+    background-image: url(../img/sprites.png);
+    background-size: 200px 200px;
+    background-position: 0 95px;
+    top: 10px;
+}
+
+.header-cai .h-right {
+    width: 50px;
+    height: 100%;
+    /* background-color: tomato; */
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    /* 文字水平居中 */
+    text-align: center;
+    /* 文字的垂直居中 */
+    line-height: 50px;
+    color: white;
+}
+
+.header-cai .h-center {
+    width: 100%;
+    height: 100%;
+    /* background-color: violet; */
+    padding: 0 50px 0 60px;
+    box-sizing: border-box;
+}
+
+.header-cai .h-seach {
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border-radius: 50px;
+    line-height: 50px;
+    position: relative;
+    top: 5px;
+    overflow: hidden;
+}
+
+.h-seach .img {
+    height: 20px;
+    width: 20px;
+    background-image: url(../img/sprites.png);
+    background-size: 200px 200px;
+    background-position: -56px 90px;
+    padding: 0 5px;
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    left: 6px;
+}
+
+.h-seach input {
+    vertical-align: middle;
+    height: 35px;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    padding-left: 36px;
+    left: 0;
+    top: 2.5px;
+    border: none;
+    outline: none;
+}
+
+/* 分类菜单部分 */
+
+.nav-type {
+    overflow: hidden;
+    background-color: white;
+}
+
+.items-box {
+    width: 25%;
+    text-align: center;
+    float: left;
+    padding: 10px 0;
+}
+
+.items-box img {
+    width: 40px;
+    height: 40px;
+}
+
+.items-box p {
+    /* width: 40px; */
+    font-size: 12px;
+    /* margin: 0 auto; */
+}
+
+.zhang {
+    padding: 10px;
+}
+
+.zhang-2 {
+    background-color: white;
+    padding: 5px;
+}
+
+/* 记得拿回title的高度 */
+
+.zhang-2 .title {
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.zhang-2 .title>.left {
+    float: left;
+}
+
+.zhang-2 .title>.left img {
+    width: 20px;
+    vertical-align: bottom;
+}
+
+.zhang-2 .title>.left .tilte-text {
+    color: red;
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.zhang-2 .title>.right {
+    float: right;
+    font-size: 16px;
+    vertical-align: bottom;
+    position: relative;
+    top: 6px;
+}
+
+/* 计时器 */
+
+.zhang-2 .time {
+    display: inline-block;
+}
+
+.time .shuzi {
+    background-color: black;
+    color: white;
+    padding: 0 3px;
+}
+
+.zhang-s {
+    margin: 20px 0px;
+    overflow: hidden;
+}
+
+.s-content {
+    width: 33.333333333333336%;
+    /* 避免到时候因为内外边距撑大导致宽度变大 */
+    box-sizing: border-box;
+    text-align: center;
+    border-right: 1px solid #dcdcdc;
+    float: left;
+}
+
+.s-content:nth-child(3n) {
+    border-right: none;
+}
+
+.s-content img {
+    width: 100%;
+}
+
+.s-content span {
+    color: red;
+    font-size: 18px;
+}
+
+.s-content del {
+    color: #666666;
+    font-size: 18px;
+}
+
+/* 疯狂星期二 */
+
+.xing2 {
+    margin: 5px 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.xing2-box {
+    padding: 5px;
+    background-color: white;
+    margin-bottom: 1px;
+}
+
+.title-x .img {
+    height: 20px;
+    width: 8px;
+    background-color: red;
+    float: left;
+    margin-right: 10px;
+}
+
+.title-x img {
+    width: 100%;
+}
+
+.xing3-box {
+    padding: 5px;
+    background-color: white;
+}
+
+.xing3-box img {
+    width: 100%;
+}
+
+.chaoshi {
+    margin: 5px 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.chaoshi-1 {
+    padding: 5px;
+    background-color: white;
+    margin-bottom: 1px;
+}
+
+.chaoshi-2 {
+    padding: 5px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.chaoshi-2 .left img, .chaoshi-2 .right img {
+    width: 100%;
+}
+
+.chaoshi-2 .left {
+    width: 50%;
+    float: left;
+    border-right: 1px solid #dcdcdc;
+    box-sizing: border-box;
+}
+
+.chaoshi-2 .right {
+    width: 50%;
+    float: right;
+}

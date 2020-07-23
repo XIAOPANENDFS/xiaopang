@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.jd_layout {
+    min-width: 300px;
+    max-width: 640px;
+    height: 100%;
+    /* 为了让其居中 */
+    margin: 0 auto;
+    /* background-color: #f5f5f5; */
+    position: relative; 
+}
+
+.header-search {
+    position: relative;
+    z-index: 99;
+    /* height: 20%; */
+    width: 100%;
+}
+
+.header-search>.logo {
+    background: url(../img/sprites.png) no-repeat;
+    background-size: 150px 150px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    z-index: 1;
+    background-position: 0px -80px;
+}
+
+.header-search>.input-search {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    background-color: red;
+    box-sizing: border-box;
+    padding: 5px 40px;
+}
+
+.input-search input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.seacrh-submit {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    color: white;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+/* 商品展示模块 */
+
+
+.shong-main {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 35px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.shong-main>a {
+    width: 100%;
+    display: block;
+    height: 100px;
+}
+
+.shong-box {
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100px;
+}
+
+.shong-box .shong-img {
+    width: 100px;
+    height: 100px;
+    background-image: url(../img//buy-pro1.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.shong-info {
+    top: 0;
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 105px;
+    color: black;
+    padding-top: 10px;
+    border-bottom: rgb(233, 233, 233) 1px solid;
+}
+
+.shong-name {
+    font-size: 14px;
+}
+
+.shong-content {
+    font-size: 12px;
+    height: 20px;
+}
+
+.shong-content span {
+    transform: scale(0.5, 0.5);
+}
+
+.shong-info .money {
+    position: absolute;
+    left: 105px;
+    bottom: 5px;
+    font-size: 14px;
+}

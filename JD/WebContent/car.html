@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <!-- 1.导入对应的css -->
+    <link rel="stylesheet" href="css/car.css">
+    <!-- rem  响应式 -->
+</head>
+
+<body>
+    <!-- 购物车的头部 -->
+    <div class="header jd_layout">
+
+        <div class="icon-left">
+
+        </div>
+
+        <div class="text-center">
+            购物车
+        </div>
+
+        <div class="icon-right">
+
+        </div>
+
+
+
+    </div>
+
+    <main class="jd_layout">
+        <!-- 提示安全模块 -->
+        <div class="tips">
+            <img src="img/safe_icon.png" alt=""> 您正在安全购物环境中，请放心购物
+        </div>
+
+        <!--店铺的独立模块 -->
+        <div class="dian-box" id="mubioa1">
+            <!-- <div>
+                <div class="q-btn">
+                    <div class="left">
+                        <div class="l-checkbox "></div>
+                        <div class="buy-logo"></div>
+                        <div class="l-text1">京东自营</div>
+                    </div>
+                    <div class="right">
+                        您享受满79元免飞云服务
+                    </div>
+
+                </div>
+                <div class="q-box">
+                    <div class="l-checkbox "></div>
+                    <div class="img"></div>
+                    <div class="right">
+                        <a class="menu">Apple iPhone 6s (A1700) 16G 深空灰色 移动联通电信4G手机</a>
+                        <p class="money">￥4488.0</p>
+                        <div class="add-menu">
+                            <div class="left">
+                                <span class="icon-l"></span>
+                                <input type="text">
+                                <span class="icon-r"></span>
+                            </div>
+                            <div class="right">
+                                <div class="head"></div>
+                                <div class="body"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="q-box">
+                    <div class="l-checkbox "></div>
+                    <div class="img"></div>
+                    <div class="right">
+                        <a class="menu">Apple iPhone 6s (A1700) 16G 深空灰色 移动联通电信4G手机</a>
+                        <p class="money">￥4488.0</p>
+                        <div class="add-menu">
+                            <div class="left">
+                                <span class="icon-l"></span>
+                                <input type="text">
+                                <span class="icon-r"></span>
+                            </div>
+                            <div class="right">
+                                <div class="head"></div>
+                                <div class="body"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> -->
+        </div>
+
+    </main>
+
+    <footer class="jd_layout">
+
+        <div class="left">
+            <div class="l-checkbox-q"></div>
+            <div class="select-text" onclick="qunaxuan()">全选</div>
+            <div class="money-box">
+                <div class="heji">合计:￥0.00</div>
+                <div class="zonge">总额:￥0.00返现￥0.00</div>
+            </div>
+
+        </div>
+        <div class="right">
+            去结算(<span>4</span>)
+        </div>
+
+
+    </footer>
+
+
+
+    </div>
+
+
+
+
+
+    <script src="js/jquery.js"></script>
+
+    <script>
+        sessionStorage.setItem("user_id", 1);
+        function ShonggingCar(select) {
+            var father = $(select);
+            $.ajax({
+                url: "http://127.0.0.1:8080/JD/ShoppingCart",
+                type: "get",
+                data: {
+                    method: "list",
+                    id: sessionStorage.getItem("user_id")
+                },
+                //指定返回是json格式的东西
+                dataType: "json",
+                success: function (data) {
+                    var panding = null;
+                    var dian_code = "";
+                    $.each(data, function (i, val) {
+                        if (val.dianpu_name != panding && i != 0) {
+                            console.log("进入")
+                            dian_code += '</div>';
+                        }
+                        if (val.dianpu_name != panding) {
+                            panding = val.dianpu_name;
+                            //因为第一次迭代是店铺信息
+                            dian_code += '<div style="margin-bottom:20px;"><div class="q-btn"><div class="left"><div class="l-checkbox"></div><div class="buy-logo"></div>';
+                            dian_code += '<div class="l-text1">' + val.dianpu_name + '</div> </div> <div class="right">' + val.youhui + '</div></div>    ';
+                        }
+                        //                                          这个id是购物车的id
+                        dian_code += '<div class="q-box" data-id="' + val.id + '"><div class="l-checkbox"></div><div class="img"  style="background-image: url(img/cp5.jpg);" ></div><div class="right">';
+                        dian_code += '<a class="menu">' + val.dianpu_name + "   " + val.shong_name + '</a>';
+                        dian_code += '<p class="money">￥' + val.money + '</p>';
+                        dian_code += '<div class="add-menu"><div class="left"><span class="icon-l"></span> <input type="text" class="shoping-number" value="' + val.number + '"><span class="icon-r"></span></div><div class="right"><div class="head"></div><div class="body"></div></div></div></div></div>';
+
+                    });
+                    dian_code += "</div>";
+                    father.append($(dian_code));
+                    // 等UI生成完毕在执行绑定
+                    A();
+                }
+            });
+        }
+
+        ShonggingCar("#mubioa1");
+
+        function A() {
+            var array = document.getElementsByClassName("l-checkbox");
+            var addclass = "l-active";
+            var dataflag = "data-flag";
+            for (var o = 0; o < array.length; o++) {
+                array[o].onclick = function () {
+                    console.log(o)
+                    //这里的这个this代表的触发的点击的那个对象
+                    //获取属性
+                    var flag = this.getAttribute(dataflag)
+                    if (flag == 0) {
+                        this.classList.add(addclass);
+                        //记得更新一个标签上的属性
+                        this.setAttribute(dataflag, 1);
+                    } else {
+                        this.classList.remove(addclass);
+                        this.setAttribute(dataflag, 0);
+                    }
+                }
+            }
+        }
+
+        var sum_moner = 0.00;
+
+        //全选
+        function qunaxuan() {
+            var array = document.getElementsByClassName("l-checkbox");
+            var addclass = "l-active";
+            var dataflag = "data-flag";
+            for (var o = 0; o < array.length; o++) {
+                //这里的这个this代表的触发的点击的那个对象
+                //获取属性
+                array[o].classList.add(addclass);
+                //记得更新一个标签上的属性
+                array[o].setAttribute(dataflag, 1);
+            }
+            //获取每一个元素的金额
+            var list = document.getElementsByClassName("money");
+
+            var list2 = document.getElementsByClassName("shoping-number");
+
+            var sum = 0;
+            $.each(list, function (i, val) {
+                //字符串转数字
+                sum += parseFloat(val.innerText.replace("￥", "")) * list2[i].value
+            });
+            console.log(sum)
+
+            document.querySelector(".heji").innerText = "合计:￥" + sum;
+            document.querySelector(".zonge").innerText = "总额:￥" + sum + "返现￥0.00";
+        }
+
+
+
+    </script>
+
+    <script>
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
